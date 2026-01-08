@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+    /* Design System v2: Warm & Stylish */
+    /* Colors */
+    --color-brand-base: #FAF9F6;
+    /* Warm Ivory */
+    --color-brand-main: #E68A8A;
+    /* Soft Pink - slightly muted */
+    --color-brand-sub: #A8C9A8;
+    /* Sage Green */
+    --color-brand-accent: #8E7C68;
+    /* Warm Brown (instead of dark grey) */
+    --color-brand-text: #4A4A4A;
+    /* Soft Charcoal */
+    --color-brand-light: #F4E8E8;
+    /* Very pale pink */
+
+    /* Typography */
+    --font-jp: "Zen Maru Gothic", sans-serif;
+    --font-en: "Outfit", sans-serif;
+    --font-hand: "La Belle Aurore", cursive;
+
+    /* Usage: font-jp, font-en, font-hand */
+}
+
+@layer base {
+
+    html,
+    body {
+        @apply h-full;
+    }
+
+    body {
+        background-color: var(--color-brand-base);
+        color: var(--color-brand-text);
+        font-family: var(--font-jp);
+    }
+
+    /* Headings defaults */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-accent font-bold;
+    }
+}
+
+@layer components {
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

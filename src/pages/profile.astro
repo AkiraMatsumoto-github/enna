@@ -1,0 +1,214 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import SectionTitle from "../components/ui/SectionTitle.astro";
+
+const history = [
+    { year: "2010", content: "都内私立幼稚園にて勤務（3年）" },
+    { year: "2013", content: "認可保育園にてクラス担任として勤務（5年）" },
+    {
+        year: "2018",
+        content: "インドネシア・ジャカルタの日本人向け幼稚園にて勤務（2年）",
+    },
+    { year: "2020", content: "帰国後、都内産後ケア施設にて勤務（3年）" },
+    { year: "2023", content: "フリーランスベビーシッター「enna」を開業" },
+];
+
+const certifications = [
+    "保育士資格",
+    "幼稚園教諭二種免許",
+    "子育て心理アドバイザー",
+    "ベビーマッサージインストラクター",
+];
+---
+
+<Layout title="プロフィール | enna">
+    <Header />
+
+    <main class="flex-1 pt-16">
+        <!-- Page Title -->
+        <div class="bg-brand-light/30 py-12 text-center">
+            <h1
+                class="text-3xl font-bold text-brand-accent tracking-widest mb-2 font-en"
+            >
+                PROFILE
+            </h1>
+            <p class="text-sm text-brand-text/70">プロフィール</p>
+        </div>
+
+        <div
+            class="max-w-screen-md mx-auto px-5 py-20 divide-y divide-brand-light/50"
+        >
+            <!-- Top Profile Section -->
+            <div
+                class="flex flex-col md:flex-row items-center md:items-start gap-10 pb-20"
+            >
+                <div
+                    class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 bg-brand-light rounded-full overflow-hidden shadow-md"
+                >
+                    <img
+                        src="/hero.png"
+                        alt="Profile Photo"
+                        class="w-full h-full object-cover opacity-80"
+                    />
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-2xl font-bold text-brand-accent mb-2">
+                        小林 睦
+                    </h2>
+                    <p
+                        class="text-brand-main font-en font-bold text-lg mb-6 tracking-wide"
+                    >
+                        Mutsumi Kobayashi
+                    </p>
+                    <p class="text-brand-text leading-loose text-justify">
+                        保育士・幼稚園教諭として13年間、子供たちの成長に携わってきました。
+                        産後ケア施設での勤務経験から、「ママの笑顔こそが、子供の心の安定につながる」と強く実感。<br
+                        /><br />
+                        「ただのお預かり」ではなく、親御様の心に寄り添い、お子様一人ひとりの個性を大切にするシッティングを心がけています。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Concept Section -->
+            <div class="py-20">
+                <SectionTitle en="Concept" ja="ennaに込めた想い" />
+                <div
+                    class="bg-brand-light/20 p-8 rounded-2xl relative overflow-hidden"
+                >
+                    <div
+                        class="absolute -top-10 -right-10 text-brand-main/10 text-9xl font-hand select-none z-0"
+                    >
+                        enna
+                    </div>
+                    <div
+                        class="relative z-10 space-y-6 text-brand-text leading-loose text-justify"
+                    >
+                        <p>
+                            「enna（エンナ）」という名前には、2つの意味を込めています。
+                            ひとつは、お子様、そしてご家族との素敵な「<span
+                                class="text-brand-main font-bold"
+                                >ご縁（En）</span
+                            >」。
+                            もうひとつは、ママと赤ちゃんを優しく包み込む丸い「<span
+                                class="text-brand-main font-bold">円（En）</span
+                            >」のような温もりです。
+                        </p>
+                        <p>
+                            孤独になりがちな育児の中で、信頼できる「第三の家族」のような存在でありたい。
+                            プロフェッショナルな知識と技術を持ちながら、親戚のお姉さんのような温かさで、
+                            ママとお子様の毎日に彩りを添えるお手伝いをいたします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q&A Section -->
+            <div class="py-20">
+                <SectionTitle en="Q&A" ja="よくある質問・インタビュー" />
+                <div class="space-y-6">
+                    <div
+                        class="bg-white p-6 rounded-xl border-l-4 border-brand-main shadow-sm"
+                    >
+                        <h4
+                            class="text-brand-accent font-bold mb-3 flex items-start gap-3"
+                        >
+                            <span class="text-brand-main font-en text-xl"
+                                >Q.</span
+                            >
+                            <span>保育で一番大切にしていることは？</span>
+                        </h4>
+                        <p class="text-brand-text/90 leading-relaxed pl-8">
+                            「お子様の気持ちを受け止めること（受容）」と「自己肯定感を育む言葉かけ」です。
+                            泣いている理由、笑っている理由、それぞれの感情に寄り添い、安心できる環境を作ります。
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl border-l-4 border-brand-main shadow-sm"
+                    >
+                        <h4
+                            class="text-brand-accent font-bold mb-3 flex items-start gap-3"
+                        >
+                            <span class="text-brand-main font-en text-xl"
+                                >Q.</span
+                            >
+                            <span>人見知り・場所見知りが激しいのですが...</span>
+                        </h4>
+                        <p class="text-brand-text/90 leading-relaxed pl-8">
+                            ご安心ください。無理に距離を縮めるのではなく、お子様のペースに合わせて徐々に関係を築いていきます。
+                            お気に入りのおもちゃなどを事前に教えていただけると、スムーズに遊びに入りやすくなります。
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl border-l-4 border-brand-main shadow-sm"
+                    >
+                        <h4
+                            class="text-brand-accent font-bold mb-3 flex items-start gap-3"
+                        >
+                            <span class="text-brand-main font-en text-xl"
+                                >Q.</span
+                            >
+                            <span>休日の過ごし方は？</span>
+                        </h4>
+                        <p class="text-brand-text/90 leading-relaxed pl-8">
+                            カフェ巡りや美術館に行くのが好きです。美しいものや美味しいものに触れて、感性を磨く時間を大切にしています。
+                            最近は観葉植物を育てることにもハマっています！
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="py-20">
+                <SectionTitle en="History" ja="経歴" />
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-brand-light"
+                >
+                    <div
+                        class="relative pl-8 border-l-2 border-brand-light space-y-10"
+                    >
+                        {
+                            history.map((item) => (
+                                <div class="relative">
+                                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-brand-main border-4 border-white shadow-sm" />
+                                    <div class="text-brand-main font-en font-bold mb-1">
+                                        {item.year}
+                                    </div>
+                                    <div class="text-brand-text font-medium">
+                                        {item.content}
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="pt-20">
+                <SectionTitle en="License" ja="保有資格" />
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto"
+                >
+                    {
+                        certifications.map((cert) => (
+                            <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-brand-light/60 hover:shadow-md transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-full bg-brand-light/30 flex items-center justify-center text-brand-main group-hover:bg-brand-main group-hover:text-white transition-colors">
+                                    <span class="text-lg">✓</span>
+                                </div>
+                                <span class="font-medium text-brand-text tracking-wide">
+                                    {cert}
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

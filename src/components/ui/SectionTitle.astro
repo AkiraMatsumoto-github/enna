@@ -1,0 +1,21 @@
+---
+interface Props {
+    en: string;
+    ja: string;
+    color?: string; // e.g. 'text-brand-accent'
+}
+
+const { en, ja, color = "text-brand-accent" } = Astro.props;
+---
+
+<div class="text-center mb-16 relative">
+    <span
+        class={`font-hand text-5xl md:text-6xl ${color} opacity-20 absolute top-[-4rem] left-1/2 -translate-x-1/2 w-full select-none z-0`}
+    >
+        {en}
+    </span>
+    <h2 class={`relative z-10 text-2xl md:text-3xl font-bold ${color} mt-2`}>
+        {ja}
+    </h2>
+    <div class="h-1 w-20 bg-brand-main mx-auto rounded-full mt-4"></div>
+</div>

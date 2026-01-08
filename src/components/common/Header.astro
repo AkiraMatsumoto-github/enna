@@ -1,0 +1,125 @@
+---
+const navItems = [
+	{ name: "Top", href: "/" },
+	{ name: "Profile", href: "/profile" },
+	{ name: "Service", href: "/service" },
+	{ name: "Activity", href: "/activity" },
+	{ name: "Contact", href: "/contact" },
+];
+---
+
+<header class="fixed w-full z-50 bg-white shadow-sm">
+	<div
+		class="max-w-screen-xl mx-auto px-5 h-16 flex items-center justify-between"
+	>
+		<!-- Logo -->
+		<a href="/" class="flex items-center gap-2 group">
+			<img
+				src="/logo.png"
+				alt="enna"
+				class="h-12 w-auto group-hover:opacity-80 transition-opacity"
+			/>
+			<!-- <span class="font-en font-bold text-2xl text-brand-accent tracking-wide">enna</span> -->
+		</a>
+
+		<!-- Desktop Nav -->
+		<nav class="hidden md:flex items-center gap-8">
+			{
+				navItems.map((item) => (
+					<a
+						href={item.href}
+						class="text-brand-text font-jp font-medium hover:text-brand-main transition-colors text-sm tracking-wide"
+					>
+						{item.name}
+					</a>
+				))
+			}
+			<a
+				href="/contact"
+				class="bg-brand-main text-white font-jp font-bold py-2 px-6 rounded-full hover:shadow-md hover:opacity-90 transition-all text-sm"
+			>
+				お問い合わせ
+			</a>
+		</nav>
+
+		<!-- Mobile Hamburger Button -->
+		<button
+			id="menu-btn"
+			class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 z-50 focus:outline-none"
+			aria-label="Menu"
+		>
+			<span
+				class="block w-full h-0.5 bg-brand-accent transition-all duration-300 ease-out origin-center"
+			></span>
+			<span
+				class="block w-full h-0.5 bg-brand-accent transition-all duration-300 ease-out origin-center"
+			></span>
+			<span
+				class="block w-full h-0.5 bg-brand-accent transition-all duration-300 ease-out origin-center"
+			></span>
+		</button>
+	</div>
+
+	<!-- Mobile Menu Overlay -->
+	<div
+		id="mobile-menu"
+		class="fixed inset-0 bg-brand-base z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+	>
+		{
+			navItems.map((item) => (
+				<a
+					href={item.href}
+					class="text-brand-accent font-jp font-bold text-xl hover:text-brand-main transition-colors"
+				>
+					{item.name}
+				</a>
+			))
+		}
+		<a
+			href="/contact"
+			class="bg-brand-main text-white font-jp font-bold py-3 px-8 rounded-full shadow-md text-lg mt-4"
+		>
+			お問い合わせ
+		</a>
+	</div>
+</header>
+
+<script>
+	const menuBtn = document.getElementById("menu-btn");
+	const mobileMenu = document.getElementById("mobile-menu");
+	const lines = menuBtn?.querySelectorAll("span");
+	let isOpen = false;
+
+	menuBtn?.addEventListener("click", () => {
+		isOpen = !isOpen;
+
+		// Icon Animation
+		if (isOpen) {
+			lines![0].style.transform = "translateY(8px) rotate(45deg)";
+			lines![1].style.opacity = "0";
+			lines![2].style.transform = "translateY(-8px) rotate(-45deg)";
+
+			// Menu Display
+			mobileMenu?.classList.remove("opacity-0", "pointer-events-none");
+			mobileMenu?.classList.add("opacity-100", "pointer-events-auto");
+			document.body.style.overflow = "hidden"; // Prevent scrolling
+		} else {
+			lines![0].style.transform = "none";
+			lines![1].style.opacity = "1";
+			lines![2].style.transform = "none";
+
+			// Menu Hide
+			mobileMenu?.classList.remove("opacity-100", "pointer-events-auto");
+			mobileMenu?.classList.add("opacity-0", "pointer-events-none");
+			document.body.style.overflow = "";
+		}
+	});
+
+	// Close menu when clicking a link
+	const links = mobileMenu?.querySelectorAll("a");
+	links?.forEach((link) => {
+		link.addEventListener("click", () => {
+			if (isOpen) menuBtn?.click();
+		});
+	});
+</script>
