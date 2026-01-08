@@ -1,32 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/common/Header.astro';
-import Footer from '../components/common/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
 ---
 
 <Layout title="お問い合わせ | enna">
-	<Header />
-	
-	<main class="flex-1 pt-16">
+    <Header />
+
+    <main class="flex-1 pt-16">
         <!-- Page Title -->
         <div class="bg-brand-light/30 py-12 text-center">
-            <h1 class="text-3xl font-bold text-brand-accent tracking-widest mb-2 font-en">CONTACT</h1>
+            <h1
+                class="text-3xl font-bold text-brand-accent tracking-widest mb-2 font-en"
+            >
+                CONTACT
+            </h1>
             <p class="text-sm text-brand-text/70">お問い合わせ</p>
         </div>
 
         <div class="max-w-screen-md mx-auto px-5 py-20">
-            
             <!-- LINE Section (Recommended) -->
-            <section class="bg-white border-2 border-[#06C755] rounded-3xl p-8 md:p-10 text-center mb-16 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-[#06C755] text-white text-xs font-bold px-4 py-1 rounded-bl-lg">おすすめ</div>
-                <h2 class="text-xl md:text-2xl font-bold text-brand-accent mb-4">公式LINEで気軽に相談</h2>
+            <section
+                class="bg-white border-2 border-[#06C755] rounded-3xl p-8 md:p-10 text-center mb-16 shadow-sm relative overflow-hidden"
+            >
+                <div
+                    class="absolute top-0 right-0 bg-[#06C755] text-white text-xs font-bold px-4 py-1 rounded-bl-lg"
+                >
+                    おすすめ
+                </div>
+                <h2
+                    class="text-xl md:text-2xl font-bold text-brand-accent mb-4"
+                >
+                    公式LINEで気軽に相談
+                </h2>
                 <p class="text-brand-text/80 text-sm mb-8 leading-relaxed">
-                    日程調整や事前の相談など、LINEならスムーズにやり取りが可能です。<br>
+                    日程調整や事前の相談など、LINEならスムーズにやり取りが可能です。<br
+                    />
                     友達追加をして、お気軽にメッセージをお送りください。
                 </p>
-                <a href="#" class="inline-flex items-center justify-center gap-3 bg-[#06C755] text-white font-bold py-4 px-8 rounded-full shadow-md hover:shadow-lg hover:opacity-90 transition-all w-full max-w-sm mx-auto">
+                <a
+                    href="https://lin.ee/Q8iHFfP"
+                    class="inline-flex items-center justify-center gap-3 bg-[#06C755] text-white font-bold py-4 px-8 rounded-full shadow-md hover:shadow-lg hover:opacity-90 transition-all w-full max-w-sm mx-auto"
+                >
                     <!-- LINE Icon SVG (Simple) -->
-                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 2.5c-5.52 0-10 3.58-10 8 0 2.53 1.45 4.8 3.82 6.17-.18.7-.66 2.53-.76 2.92-.04.14.07.28.2.2.82-.47 3.54-2.05 4.14-2.43.85.24 1.74.37 2.65.37 5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-4.41 0-8-2.69-8-6s3.59-6 8-6 8 2.69 8 6-3.59 6-8 6z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"
+                        ><path
+                            d="M12 2.5c-5.52 0-10 3.58-10 8 0 2.53 1.45 4.8 3.82 6.17-.18.7-.66 2.53-.76 2.92-.04.14.07.28.2.2.82-.47 3.54-2.05 4.14-2.43.85.24 1.74.37 2.65.37 5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-4.41 0-8-2.69-8-6s3.59-6 8-6 8 2.69 8 6-3.59 6-8 6z"
+                        ></path></svg
+                    >
                     公式LINEを友達追加する
                 </a>
             </section>
@@ -39,56 +60,105 @@ import Footer from '../components/common/Footer.astro';
 
             <!-- Contact Form -->
             <section>
-                <h2 class="text-xl md:text-2xl font-bold text-brand-accent mb-8 text-center">お問い合わせフォーム</h2>
-                
+                <h2
+                    class="text-xl md:text-2xl font-bold text-brand-accent mb-8 text-center"
+                >
+                    お問い合わせフォーム
+                </h2>
+
                 <form class="space-y-6">
                     <!-- Name -->
                     <div>
-                        <label for="name" class="block text-sm font-bold text-brand-accent mb-2">お名前 <span class="text-red-400">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="例: 山田 花子" 
-                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20" />
+                        <label
+                            for="name"
+                            class="block text-sm font-bold text-brand-accent mb-2"
+                            >お名前 <span class="text-red-400">*</span></label
+                        >
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="例: 山田 花子"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20"
+                        />
                     </div>
 
                     <!-- Email -->
                     <div>
-                        <label for="email" class="block text-sm font-bold text-brand-accent mb-2">メールアドレス <span class="text-red-400">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="例: example@enna.com" 
-                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20" />
+                        <label
+                            for="email"
+                            class="block text-sm font-bold text-brand-accent mb-2"
+                            >メールアドレス <span class="text-red-400">*</span
+                            ></label
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="例: example@enna.com"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20"
+                        />
                     </div>
 
                     <!-- Type -->
                     <div>
-                        <label for="type" class="block text-sm font-bold text-brand-accent mb-2">お問い合わせ種別</label>
+                        <label
+                            for="type"
+                            class="block text-sm font-bold text-brand-accent mb-2"
+                            >お問い合わせ種別</label
+                        >
                         <div class="relative">
-                            <select id="type" name="type" 
-                                class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20 appearance-none">
+                            <select
+                                id="type"
+                                name="type"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20 appearance-none"
+                            >
                                 <option>シッティングのご予約について</option>
                                 <option>事前面談のご希望</option>
                                 <option>料金・プランについて</option>
                                 <option>その他のお問い合わせ</option>
                             </select>
-                            <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">▼</div>
+                            <div
+                                class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500"
+                            >
+                                ▼
+                            </div>
                         </div>
                     </div>
 
                     <!-- Content -->
                     <div>
-                        <label for="message" class="block text-sm font-bold text-brand-accent mb-2">お問い合わせ内容 <span class="text-red-400">*</span></label>
-                        <textarea id="message" name="message" rows="6" required placeholder="ご希望の日時やご質問内容をご記入ください。"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20"></textarea>
+                        <label
+                            for="message"
+                            class="block text-sm font-bold text-brand-accent mb-2"
+                            >お問い合わせ内容 <span class="text-red-400">*</span
+                            ></label
+                        >
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            placeholder="ご希望の日時やご質問内容をご記入ください。"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20"
+                        ></textarea>
                     </div>
 
                     <!-- Submit -->
                     <div class="pt-4 text-center">
-                        <button type="submit" class="bg-brand-accent text-white font-bold py-4 px-12 rounded-full shadow-md hover:opacity-90 hover:shadow-lg transition-all w-full md:w-auto">
+                        <button
+                            type="submit"
+                            class="bg-brand-accent text-white font-bold py-4 px-12 rounded-full shadow-md hover:opacity-90 hover:shadow-lg transition-all w-full md:w-auto"
+                        >
                             送信する
                         </button>
                     </div>
                 </form>
             </section>
-
         </div>
     </main>
 
-	<Footer />
+    <Footer />
 </Layout>
