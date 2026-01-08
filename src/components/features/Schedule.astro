@@ -291,17 +291,39 @@
                 let bgClass = "";
 
                 if (event) {
+                    const startDate = new Date(event.start);
+                    const endDate = new Date(event.end);
+                    const formatTime = (d) =>
+                        `${d.getHours()}:${d.getMinutes().toString().padStart(2, "0")}`;
+                    // 0分などの表記をきれいにするため、分が00の場合は省略せずそのまま表示
+                    // 時間を表示するかどうかの判定（9:00 - 18:00のような実時間がある場合のみ）
+                    const hasTime =
+                        startDate.getHours() !== 0 ||
+                        startDate.getMinutes() !== 0 ||
+                        endDate.getHours() !== 0 ||
+                        endDate.getMinutes() !== 0;
+
+                    const timeHtml = hasTime
+                        ? `<span class="text-[10px] leading-tight text-gray-500 mt-0.5 text-center font-midium tracking-tighter">${formatTime(startDate)}-${formatTime(endDate)}</span>`
+                        : "";
+
                     if (event.title === "○" || event.title === "◎") {
-                        statusHtml =
-                            '<span class="text-lg md:text-xl font-bold text-red-400 leading-none mt-1">◎</span>';
+                        statusHtml = `<div class="flex flex-col items-center">
+                            <span class="text-lg md:text-xl font-bold text-red-400 leading-none mt-1 hidden md:block">◎</span>
+                            <span class="text-base md:text-lg font-bold text-red-400 leading-none mt-1 block md:hidden">◎</span>
+                            ${timeHtml}
+                        </div>`;
                         bgClass = "bg-red-50 hover:bg-red-100 cursor-pointer";
                     } else if (event.title === "×") {
                         statusHtml =
                             '<span class="text-lg md:text-xl font-bold text-gray-300 leading-none mt-1">×</span>';
                         bgClass = "bg-gray-50";
                     } else if (event.title === "△") {
-                        statusHtml =
-                            '<span class="text-lg md:text-xl font-bold text-orange-400 leading-none mt-1">△</span>';
+                        statusHtml = `<div class="flex flex-col items-center">
+                            <span class="text-lg md:text-xl font-bold text-orange-400 leading-none mt-1 hidden md:block">△</span>
+                            <span class="text-base md:text-lg font-bold text-orange-400 leading-none mt-1 block md:hidden">△</span>
+                            ${timeHtml}
+                        </div>`;
                         bgClass =
                             "bg-orange-50 hover:bg-orange-100 cursor-pointer";
                     }
