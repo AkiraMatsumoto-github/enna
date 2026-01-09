@@ -34,7 +34,7 @@
             </button>
             <span
                 id="current-month-label"
-                class="text-xl font-bold text-brand-text min-w-[120px] text-center flex items-center justify-center font-en"
+                class="text-xl font-bold text-brand-text min-w-[100px] text-center flex items-center justify-center font-en"
             >
                 <!-- JSで挿入 -->
             </span>
@@ -114,12 +114,7 @@
             ></span>
             <span class="text-brand-text/80">予約可能 (◎)</span>
         </div>
-        <div class="flex items-center gap-2">
-            <span
-                class="w-3 h-3 rounded-full bg-orange-100 border border-orange-200"
-            ></span>
-            <span class="text-brand-text/80">一部可能 (△)</span>
-        </div>
+
         <div class="flex items-center gap-2">
             <span
                 class="w-3 h-3 rounded-full bg-gray-100 border border-gray-200"
@@ -304,13 +299,13 @@
                         endDate.getMinutes() !== 0;
 
                     const timeHtml = hasTime
-                        ? `<span class="text-[10px] leading-tight text-gray-500 mt-0.5 text-center font-midium tracking-tighter">${formatTime(startDate)}-${formatTime(endDate)}</span>`
+                        ? `<span class="text-[11px] leading-tight text-red-600 mt-0.5 text-center font-bold tracking-tighter">${formatTime(startDate)}-${formatTime(endDate)}</span>`
                         : "";
 
                     if (event.title === "○" || event.title === "◎") {
                         statusHtml = `<div class="flex flex-col items-center">
-                            <span class="text-lg md:text-xl font-bold text-red-400 leading-none mt-1 hidden md:block">◎</span>
-                            <span class="text-base md:text-lg font-bold text-red-400 leading-none mt-1 block md:hidden">◎</span>
+                            <span class="text-lg md:text-xl font-bold text-red-500 leading-none mt-1 hidden md:block">◎</span>
+                            <span class="text-base md:text-lg font-bold text-red-500 leading-none mt-1 block md:hidden">◎</span>
                             ${timeHtml}
                         </div>`;
                         bgClass = "bg-red-50 hover:bg-red-100 cursor-pointer";
